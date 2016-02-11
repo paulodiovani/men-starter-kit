@@ -1,0 +1,35 @@
+web:
+  build: .
+  command: 'bash -c ''npm start'''
+  working_dir: /app/user
+  environment:
+    PORT: 8080
+    MONGOLAB_URI: 'db:27017'
+    REDIS_URL: 'redis://redis:6379'
+  ports:
+    - '8080:8080'
+  links:
+    - db
+    - redis
+
+shell:
+  build: .
+  command: bash
+  working_dir: /app/user
+  environment:
+    PORT: 8080
+    MONGOLAB_URI: 'db:27017'
+    REDIS_URL: 'redis://redis:6379'
+  ports:
+    - '8080:8080'
+  links:
+    - db
+    - redis
+  volumes:
+    - '.:/app/user'
+
+db:
+  image: mongo
+
+redis:
+  image: redis
