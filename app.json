@@ -1,0 +1,17 @@
+{
+  "name": "men-starter-kit",
+  "repository": "https://github.com/paulodiovani/men-starter-kit.git",
+  "image": "heroku/nodejs:4.3.0",
+  "addons": [
+    "mongolab:sandbox",
+    "heroku-redis:hobby-dev"
+  ],
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "mongodb"
+  ]
+}

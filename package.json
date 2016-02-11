@@ -8,7 +8,10 @@
     "node": "4.3"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "debug": "node debug app.js",
+    "test": "mocha test/bootstrap.test.js test/**/*_spec.coffee",
+    "test-debug": "mocha debug test/bootstrap.test.js test/**/*_spec.coffee"
   },
   "repository": {
     "type": "git",
