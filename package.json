@@ -10,8 +10,8 @@
   "scripts": {
     "start": "node ./bin/www",
     "debug": "node debug app.js",
-    "test": "mocha test/bootstrap.test.js test/**/*_spec.coffee",
-    "test-debug": "mocha debug test/bootstrap.test.js test/**/*_spec.coffee"
+    "test": "mocha test/bootstrap.test.coffee test/**/*_spec.coffee",
+    "test-debug": "mocha debug test/bootstrap.test.coffee test/**/*_spec.coffee"
   },
   "repository": {
     "type": "git",
@@ -36,5 +36,11 @@
     "express": "~4.13.1",
     "morgan": "~1.6.1",
     "serve-favicon": "~2.3.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "coffee-script": "^1.10.0",
+    "mocha": "^2.4.5",
+    "supertest": "^1.2.0"
   }
 }
