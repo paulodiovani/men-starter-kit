@@ -1,0 +1,28 @@
+{
+  "name": "men-starter-kit",
+  "private": true,
+  "version": "0.0.0",
+  "description": "A Node.js - Express - Mongodb starter kit for web apps.",
+  "main": "app.js",
+  "engine": {
+    "node": "4.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paulodiovani/men-starter-kit.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "mongodb"
+  ],
+  "author": "Paulo Diovani <paulo@diovani.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/paulodiovani/men-starter-kit/issues"
+  },
+  "homepage": "https://github.com/paulodiovani/men-starter-kit/#readme"
+}
