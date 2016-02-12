@@ -1,3 +1,4 @@
+[![Dependency Status](https://david-dm.org/paulodiovani/men-starter-kit.svg)](https://david-dm.org/paulodiovani/men-starter-kit)
 [![Build Status](https://travis-ci.org/paulodiovani/men-starter-kit.svg?branch=master)](https://travis-ci.org/paulodiovani/men-starter-kit)
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
