@@ -13,4 +13,18 @@ router.get('/', function(req, res) {
     });
 });
 
+/* GET tag. */
+router.get('/:id', function(req, res, next) {
+  Tag.findOne({_id: req.params.id})
+    .then(function(tag) {
+      if (!tag) { return next(); }
+
+      res.render('tags/show', {
+        title: 'Tag ' + tag.name,
+        tag: tag
+      });
+    })
+    .catch(next);
+});
+
 module.exports = router;
