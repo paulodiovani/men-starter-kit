@@ -1,14 +1,28 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
+var express      = require('express');
+var path         = require('path');
+var favicon      = require('serve-favicon');
+var logger       = require('morgan');
 var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+var bodyParser   = require('body-parser');
+var mongoose     = require('mongoose');
 
-var routes = require('./routes/index');
-var users = require('./routes/users');
+var config       = require('./config');
+var routes       = require('./routes/index');
+var users        = require('./routes/users');
 
-var app = express();
+var app          = express();
+
+// enable debug
+require('debug').enable(config.debug.debug);
+var debug = require('debug')('app:server');
+
+// connect to mongodb
+mongoose.connect(process.env.MONGOLAB_URI || config.database.url);
+mongoose.connection.on('error', function(err) {
+  debug('connection error: ' + err);
+  process.exit(1);
+});
+mongoose.connection.once('open', () => debug('Database connected!'));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -16,8 +30,8 @@ app.set('view engine', 'ejs');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-if (process.env.NODE_ENV !== 'test') {
-  app.use(logger('dev'));
+if (config.logger.logger) {
+  app.use(logger(config.logger.logger));
 }
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
