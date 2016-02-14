@@ -1,5 +1,7 @@
 process.env.NODE_ENV = 'test'
 
+mongoose       = require('mongoose')
+
 global.expect  = require('chai').expect
 global.request = require('supertest')
 global.app     = require('../app')

@@ -29,6 +29,7 @@
   },
   "homepage": "https://github.com/paulodiovani/men-starter-kit/#readme",
   "dependencies": {
+    "bluebird": "^3.3.1",
     "body-parser": "~1.15.0",
     "cookie-parser": "~1.4.1",
     "debug": "~2.2.0",

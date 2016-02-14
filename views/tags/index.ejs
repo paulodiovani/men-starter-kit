@@ -1,0 +1,11 @@
+<%- include('../_partials/header') %>
+
+<h1>Tags listing</h1>
+
+<ul class="tags">
+  <% tags.forEach(function(tag) { %>
+    <li><%= tag %></li>
+  <% }) %>
+</ul>
+
+<%- include('../_partials/footer') %>
